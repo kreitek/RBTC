@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block extra_header %}
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>-->
+<style>
+/*Set the row height to the viewport*/
+.row-height{
+  height: 90vh;
+}
+
+/*Set up the columns with a 100% height, body color and overflow scroll*/
+
+.left{
+  height: 100%;
+}
+
+.right{
+  height: 100%;
+  overflow-y: scroll;
+}
+
+</style>
+
+{% endblock extra_header %}
+
+
+{% block content %}
+
+  <div class="container-fluid">
+    <div class="row row-height">
+      <h1 id="title">Control</h1>
+      <div id="canvas_holder"></div>
+      <script language="javascript" type="text/javascript">
+        let ws_ip = "{{ ws_ip }}"
+      </script>
+      <script language="javascript" type="text/javascript" src="static/control_sketch.js"></script>
+    </div>
+  </div>
+
+{% endblock content %}
+
+
+{% block extra_footer %}
+
+{% endblock extra_footer %}
