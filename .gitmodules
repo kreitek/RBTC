@@ -1,0 +1,3 @@
+[submodule "ros_ws/src/ros2-gcode-interface"]
+	path = ros_ws/src/ros2-gcode-interface
+	url = git@github.com:danidask/ros2-gcode-interface.git
