@@ -1,8 +1,16 @@
 
 
+# INSTALL ROS2 RASPBERRY PI
+
+- [Download image Ubuntu Server 20.04 LTS 64 bits](https://ubuntu.com/download/raspberry-pi)
+- [Follow instructions](https://gist.github.com/danidask/4ac330977444b6c0edcbd99a3991cb83)
+
+
+
 # DEPENDENCIES
 
-git clone https://github.com/RobotWebTools/rosbridge_suite.git --branch ros2
+`git clone https://github.com/RobotWebTools/rosbridge_suite.git --branch ros2`
+
 
 # REFERENCES
 

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+function log() {
+  logger -s -p user.$1 ${@:2}
+}
+
+log info "rbtc_bringup: Using workspace setup file /home/ubuntu/RBTC/ros_ws/install/setup.bash"
+source /home/ubuntu/RBTC/ros_ws/install/setup.bash
+
+/opt/ros/foxy/bin/ros2 launch rbtc_bringup rbtc_bringup.launch.py

@@ -53,3 +53,6 @@ CATKIN_IGNORE
 # ROS2
 install
 log
+
+# IDEs and other
+.vscode

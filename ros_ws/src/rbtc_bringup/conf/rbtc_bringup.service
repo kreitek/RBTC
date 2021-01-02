@@ -1,0 +1,23 @@
+[Unit]
+Description="ROS2 RBTC Bringup"
+
+[Service]
+# Environment="ROS_DOMAIN_ID=42"
+#Environment="LD_LIBRARY_PATH=/opt/ros/foxy/lib"
+#Environment="PYTHONPATH=/opt/ros/foxy/lib/python3.8/site-packages/"
+#Environment="AMENT_PREFIX_PATH=/home/ubuntu/RBTC/ros_ws/install:/opt/ros/foxy"
+
+Type=simple
+User=ubuntu
+
+ExecStart=/usr/sbin/rbtc_bringup
+
+#ExecStart=/opt/ros/foxy/bin/ros2 launch --debug rbtc_bringup rbtc_bringup.launch.py
+#WorkingDirectory=/home/ubuntu/RBTC/ros_ws/
+
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=multi-user.target
