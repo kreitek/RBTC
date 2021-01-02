@@ -1,0 +1,16 @@
+[Unit]
+Description="RBTC Web"
+
+[Service]
+Type=simple
+User=root
+
+ExecStart=/home/ubuntu/RBTC/web_interface_ros/.venv/bin/python /home/ubuntu/RBTC/web_interface_ros/rbtc_web.py
+WorkingDirectory=/home/ubuntu/RBTC/web_interface_ros
+
+Restart=on-failure
+RestartSec=5
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=multi-user.target
