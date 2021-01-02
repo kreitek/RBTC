@@ -36,5 +36,22 @@ def control_view():
     return render_template("control.html", **context)
 
 
+@app.route('/reboot', methods=['GET', ])
+@auth.login_required
+def reboot_view():
+    reboot()
+    flash('System will reboot...', 'danger')
+    return redirect('/')
+
+
+@app.route('/shutdown', methods=['GET', ])
+@auth.login_required
+def shutdown_view():
+    shutdown()
+    flash('System will shutdown...', 'danger')
+    return redirect('/')
+
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=HTTP_PORT, debug=WEB_DEBUG)
