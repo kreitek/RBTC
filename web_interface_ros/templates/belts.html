@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block extra_header %}
-<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>-->
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script> -->
+  <script src="socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/danidask/js_serial/static/js_serial.min.js"></script>
+
 <style>
 /*Set the row height to the viewport*/
 .row-height{
@@ -28,13 +32,13 @@
 
   <div class="container-fluid">
     <div class="row row-height">
-      <h1 id="title">Control</h1>
-      <div id="canvas_holder"></div>
+      <h1 id="title">Belts</h1>
+      <!-- <div id="canvas_holder"></div> -->
       <script language="javascript" type="text/javascript">
         let ws_ip = "{{ ws_ip }}";
         let debug_mode = ("{{ debug_mode }}" == 'True');
       </script>
-      <script language="javascript" type="text/javascript" src="static/control_sketch.js"></script>
+      <script language="javascript" type="text/javascript" src="static/belts_sketch.js"></script>
     </div>
   </div>
 
