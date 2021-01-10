@@ -90,12 +90,11 @@ function setup() {
 
 
 function draw() {
-  let mododebug = true
   background(220)
-  // if (mododebug) text(mouseX + ", " + mouseY, 0, 10)  // DEBUG
+  // if (debug_mode) text(mouseX + ", " + mouseY, 0, 10)  // DEBUG
   // let battery_percentage = map(battery_voltage, 9, 12.3, 0, 100)
   // text(`bateria_porcentaje ${bateria_raw}`, 0, 25)
-  if (ros.isConnected || mododebug){
+  if (ros.isConnected || debug_mode){
     endEffector.update()
   }
   else{

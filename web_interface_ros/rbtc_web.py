@@ -9,7 +9,12 @@ from settings import HTTP_PORT, WEB_USER, WEB_PASS, WEB_SECRET_KEY, WEB_DEBUG
 app = Flask(__name__, static_url_path="/static", template_folder="templates")
 app.secret_key = WEB_SECRET_KEY
 auth = HTTPBasicAuth()
-ip = get_ip()
+
+common_context = {
+    "actual": "",
+    "ws_ip": get_ip(),
+    "debug_mode": WEB_DEBUG
+}
 
 @auth.verify_password
 def verify_password(username, password):
@@ -29,11 +34,17 @@ def home_view():
 @app.route('/control')
 @auth.login_required
 def control_view():
-    context = {
-        "actual": "control",
-        "ws_ip": ip,
-    }
+    context = common_context
+    context["actual"] = "control"
     return render_template("control.html", **context)
+
+
+@app.route('/belts')
+@auth.login_required
+def belts_view():
+    context = common_context
+    context["actual"] = "belts"
+    return render_template("belts.html", **context)
 
 
 @app.route('/reboot', methods=['GET', ])
